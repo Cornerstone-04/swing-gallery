@@ -1,0 +1,81 @@
+html,body{
+    height: 100%;
+    background-color: #262626;
+}
+
+.frames{
+    display: table;
+    height: 100%;
+    width: 100%;
+}
+
+.boxes{
+    display: table-cell;
+    vertical-align: middle;
+    text-align: center;
+}
+
+.box{
+    position: relative;
+    background-size: cover;
+    background-position: center center;
+    display: inline-block;
+    margin: 0 5px;
+    width: 300px;
+    height: 300px;
+    border: 25px ridge #00bfff;
+    border-radius: 5px;
+    transform-origin: 50% 0;
+    transform: rotateZ(0) translateX(0);
+    animation: animate 7s linear infinite;
+}
+
+.box::before{
+    content: '';
+    position: absolute;
+    border-left: 2px solid #fff;
+    top: -146px;
+    width: 100px;
+    height: 100px;
+    transform: rotate(-45deg);
+    right: 27px;
+}
+
+.box::after{
+    content: '';
+    position: absolute;
+    border-right: 2px solid #fff;
+    top: -146px;
+    width: 100px;
+    height: 100px;
+    transform: rotate(45deg);
+    left: 27px;
+}
+
+.box-1{
+    background-image: url(https://wallpapercave.com/wp/wp5193364.jpg);
+}
+
+.box-2{
+    background-image: url(https://wallpapercave.com/wp/wp7700463.jpg);
+}
+
+.box-3{
+    background-image: url(https://wallpapercave.com/wp/wp7947442.jpg);
+}
+
+
+@keyframes animate{
+    25%{
+        transform: rotateZ(35deg) translateX(-70px);
+    }
+    50%{
+        transform: rotateZ(0) translateX(0);
+    }
+    75%{
+        transform: rotateZ(-35deg) translateX(70px);
+    }
+    100%{
+        transform: rotateZ(0) translateX(0);
+    }
+}
